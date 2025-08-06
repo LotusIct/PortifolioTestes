@@ -1,0 +1,160 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+:root {
+  --primary-color: rgba(0, 0, 0, 0.5); /* translúcido */
+  --hover-color: #FFD700; /* dourado */
+  --text-color: #ffffff;
+}
+
+/* Base */
+.navbar {
+  backdrop-filter: blur(10px);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 72px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* logo - menu - sociais */
+  align-items: center;
+  gap: 20px;
+}
+
+
+/* Logo */
+.navbar-logo img {
+  height: 36px;
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar-toggle:hover {
+  color: var(--hover-color);
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+}
+
+
+.navbar-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(4px);
+}
+.navbar-toggle.open .bar:nth-child(2) {
+  transform: rotate(-45deg) translateY(-4px);
+}
+
+/* Menus */
+.navbar-menu-wrapper {
+  display: flex;
+  justify-content: center; /* centraliza menu */
+  align-items: center;
+  gap: 3rem;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+  color: var(--hover-color);
+}
+
+/* Social icons */
+.navbar-socials {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+  font-size: 18px;
+}
+
+.navbar-socials li a {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.navbar-socials li a:hover {
+  color: var(--hover-color);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-menu-wrapper {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background-color: rgba(15, 15, 15, 0.9);
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    display: none;
+    animation: fadeIn 0.3s ease;
+    backdrop-filter: blur(12px);
+  }
+
+  .navbar-menu-wrapper.active {
+    display: flex;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .navbar-socials {
+    justify-content: center;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

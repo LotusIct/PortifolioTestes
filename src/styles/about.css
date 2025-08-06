@@ -1,0 +1,95 @@
+.about {
+  padding: 4rem 2rem;
+  background: var(--bg-box);
+  color: var(--text-light);
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-summary {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* Container dos cards */
+.about-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* força altura igual */
+  flex-wrap: nowrap;
+  gap: 2rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Estilo de cada card */
+.area-card {
+  background: var(--bg-dark);
+  padding: 2rem;
+  border-radius: 10px;
+  border-top: 4px solid var(--primary);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: all 0.3s ease;
+  flex: 1 1 250px; /* flexível, mas igual */
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  scroll-snap-align: start;
+}
+
+.area-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-top: 4px solid var(--accent);
+}
+
+.area-card h3 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.area-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  text-align: left;
+  flex: 1 0 auto; /* faz o parágrafo crescer e manter a altura equilibrada */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .about-cards {
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .area-card {
+    flex: 0 0 80%;
+    max-width: 80%;
+    scroll-snap-align: center;
+  }
+
+  .about-cards::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .about-cards::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 4px;
+  }
+}

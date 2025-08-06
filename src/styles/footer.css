@@ -1,0 +1,68 @@
+.footer {
+  background-color: #111;
+  color: #aaa;              /* cor mais clara e suave */
+  padding: 1.5rem 1rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  user-select: none;
+  font-weight: 300;         /* fonte mais fina */
+  font-size: 0.9rem;        /* texto um pouco menor */
+}
+
+.footer-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-logo {
+  width: 30px;              /* logo menor */
+  height: 30px;
+  object-fit: contain;
+  opacity: 0.7;             /* um pouco transparente */
+}
+
+.footer-name {
+  font-weight: 400;         /* menos pesado */
+  font-size: 1rem;          /* menor */
+  color: #bbb;              /* cinza claro e discreto */
+}
+
+.footer-text p {
+  margin: 0;
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: #999;              /* tom mais claro e sutil */
+  font-style: italic;       /* opcional, para suavizar */
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 1rem;
+  width: 100%;
+  user-select: none;
+  font-weight: 300;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+  
+  .footer-brand,
+  .footer-text {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,123 @@
+.skills {
+  padding: 4rem 2rem;
+  background-color: var(--primary);
+  height: 70vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills h2 {
+  margin-top: 0;
+  text-align: center;
+  color: var(--bg-dark);
+  margin-bottom: 1rem;
+  font-size: 2.75rem;
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.skills-description {
+  color: var(--bg-dark);
+  font-size: 1.125rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.skills-marquee {
+  overflow: hidden;
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  white-space: nowrap;
+  animation-play-state: running;
+  transition: animation-play-state 0.3s ease;
+  cursor: grab;
+  padding: 10px;
+}
+
+.skills-marquee:hover .marquee-track,
+.skills-marquee:active .marquee-track {
+  animation-play-state: paused;
+}
+
+.tech-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-dark);
+  margin: 0 1.5rem;
+  min-width: 100px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.tech-icon i {
+  font-size: 4rem;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.15));
+  transition: filter 0.3s ease;
+}
+
+.tech-icon span {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--bg-dark);
+  user-select: none;
+}
+
+.tech-icon:hover {
+  color: var(--bg-dark);
+  transform: scale(1.1);
+}
+
+.tech-icon:hover i {
+  filter: drop-shadow(0 4px 4px rgba(0,0,0,0.3));
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .skills {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+
+  .marquee-track {
+    animation-duration: 30s;
+  }
+
+  .tech-icon {
+    margin: 0 1rem;
+    min-width: 80px;
+  }
+
+  .tech-icon i {
+    font-size: 3rem;
+  }
+
+  .skills-description {
+    max-width: 90%;
+  }
+}

@@ -1,0 +1,204 @@
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem 2rem;
+  color: var(--text-light);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.contact-title {
+  font-size: 2.8rem;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+   background: var(--hover);
+   border-radius: 1rem;
+  max-width: 1000px;
+  min-height: 400px;
+}
+
+.contact-info {
+  flex: 1;
+  padding: 20px;
+  min-width: 300px;
+  text-align: center;
+  background: var(--hover);
+  border-radius: 1rem;
+  margin-right: -60px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* Centraliza verticalmente */
+  align-items: center;       /* Centraliza horizontalmente */
+}
+
+
+.contact-icon {
+  font-size: 3rem;
+  color: var(--bg-dark);
+  transition: transform 0.3s ease;
+}
+
+.contact-icon:hover {
+  transform: scale(1.1);
+}
+
+.contact-form {
+  flex: 2;
+  min-width: 350px;
+  background: var(--bg-dark);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.contact-info p {
+  color: var(--text-light);
+  font-style: italic;
+  font-size: 0.85rem; /* ou ajuste conforme preferir */
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  color: var( --hover);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+input,
+textarea {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #1c1c2e;
+  color: var(--text-light);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--hover);
+  background-color: #252537;
+}
+
+.submit-btn {
+  background: var(--hover);
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+}
+
+.submit-btn:hover {
+  background: var(--primary);
+  transform: scale(1.05);
+  color: var(--bg-dark)
+}
+
+/* Animação suave de entrada */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsividade para telas até 768px (tablets e smartphones em paisagem) */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    max-width: 100%;
+    min-height: auto; /* ajusta altura mínima para não limitar */
+    padding: 0.1rem;
+  }
+
+  .contact-info {
+    margin-right: 0; /* remove margem negativa */
+    min-width: auto; /* permite ajustar ao tamanho da tela */
+    width: 100%;
+    margin-bottom: -3rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* sombra menor para ficar mais leve */
+  }
+
+  .contact-form {
+    flex: none; /* para não crescer além do necessário */
+    width: 100%;
+    min-width: auto;
+    padding: 1.5rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  /* Ajusta o botão para largura total no mobile */
+  .submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Para telas ainda menores (ex: celulares em modo retrato) */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+
+  .contact-title {
+    font-size: 2.2rem;
+  }
+
+  .contact-icon {
+    font-size: 2.5rem;
+  }
+
+  input,
+  textarea {
+    font-size: 0.9rem;
+  }
+}
